@@ -34,12 +34,12 @@ void URamaColorPicker::PostEditChangeProperty(FPropertyChangedEvent& PropertyCha
 	//Update Picker to JoyColor property change!
 	if (PropertyName == TEXT("JoyColor"))
 	{  
-		SetJoyColor(JoyColor,true);
+		SetJoyColor(JoyColor);
 	}	
 } 
 #endif
 
-void URamaColorPicker::SetJoyColor(FLinearColor NewColor, bool SkipAnimation)
+void URamaColorPicker::SetJoyColor(FLinearColor NewColor)
 {
 	if(!MySlateColorPicker.IsValid()) 
 	{
@@ -93,7 +93,7 @@ void URamaColorPicker::SynchronizeProperties()
 {
 	Super::SynchronizeProperties();
 	 
-	SetJoyColor(JoyColor,true);
+	SetJoyColor(JoyColor);
 }
 
 

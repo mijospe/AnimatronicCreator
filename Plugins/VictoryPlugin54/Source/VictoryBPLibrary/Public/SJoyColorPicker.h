@@ -22,13 +22,14 @@ public: //! <~~~~~
 		//This is protected in SColorPicker 
 		//		so can't call it from UMG component
 		SetNewTargetColorRGB( NewColor, true ); //Force Update
+		UE_LOG(LogTemp, Display, TEXT("fuck"));
 	}
 	
 //Animation
 public:
  
 	FLinearColor InstantColor;
-	bool Animation_SkipToFinalForOneTick = false; 
+	bool Animation_SkipToFinalForOneTick = true; 
 	virtual void Tick( const FGeometry& AllottedGeometry, const double InCurrentTime, const float InDeltaTime ) override
 	{ 
 		//Skip to final, then resume normal animation behavior

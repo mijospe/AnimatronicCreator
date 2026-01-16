@@ -26,6 +26,10 @@ public:
 	/** The currently Chosen Color for this Color Picker! ♥ Rama*/
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Rama Color Picker",meta=(Keywords="getcolor"))
 	FLinearColor JoyColor = FLinearColor::Red;
+
+	/** The currently Chosen Color for this Color Picker! ♥ Goldie*/
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Rama Color Picker", meta = (Keywords = "animation"))
+	bool SkipAnimation = false;
 	
 	/** Called whenever the color is changed programmatically or interactively by the user */
 	UPROPERTY(BlueprintAssignable, Category="Rama Color Picker", meta=(DisplayName="OnColorChanged (Rama Color Picker)"))
@@ -36,7 +40,7 @@ public:
 	 * @param InColor The color to assign to the widget
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Rama Color Picker",meta=(Keywords="setcolor"))
-	void SetJoyColor(FLinearColor NewColor, bool SkipAnimation=false);
+	void SetJoyColor(FLinearColor NewColor);
 	
 public:
 	void ColorUpdated(FLinearColor NewValue);
